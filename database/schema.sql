@@ -1,0 +1,5 @@
+CREATE TABLE VEICULOS (
+    id INTEGER PRIMARY KEY,
+    marca TEXT,
+    modelo TEXT
+);

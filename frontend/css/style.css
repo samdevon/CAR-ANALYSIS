@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+}
+
+main {
+    max-width: 500px;
+    margin: 30px auto;
+}
+
+section {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
