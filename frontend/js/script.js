@@ -6,4 +6,18 @@ botao.addEventListener("click", function() {
 
     console.log("Marca:", marca);
     console.log("Modelo:", modelo);
+    
+    fetch ("/analisar", {
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body: JSON.stringify({
+            marca: marca,
+            modelo: modelo,
+        })
+    })
+    .then(response => response.json())
+    .then(dados => {console.log(dados);})
 });
+
