@@ -1,31 +1,415 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" 
-    content="width=device-width,initial-scale=1.0">
-    <title>CAR-ANALYSIS</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js" defer></script>
-</head>
-<body>
-    <header>
-    <h1>CAR-ANALYSIS</h1>
-    <p>Análise de veículos</p>
-</header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<main>
-    <section>
-        <h2>Consultar veículo</h2>
+    <meta
+      name="description"
+      content="Compare veículos por desempenho, eficiência, autonomia, conforto, tecnologia, segurança e custo-benefício."
+    />
 
-        <label for="marca">Marca:</label>
-        <input type="text" id="marca">
+    <title>CAR-ANALYSIS | Análise automotiva</title>
 
-        <label for="modelo">Modelo:</label>
-        <input type="text" id="modelo">
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/interface.js" defer></script>
+  </head>
 
-        <button type="button">Analisar</button>
-    </section>
-</main>
-</body>
+  <body>
+    <!-- Cabeçalho e navegação -->
+    <header class="header">
+      <nav class="navbar container">
+        <button
+          type="button"
+          id="menu-toggle"
+          class="menu-toggle"
+          aria-label="Abrir menu lateral"
+          aria-controls="sidebar"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+
+        <a href="#inicio" class="logo"> CAR-ANALYSIS </a>
+
+        <ul class="nav-links">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre o projeto</a></li>
+          <li><a href="#como-funciona">Como funciona</a></li>
+          <li><a href="#dimensoes">Dimensões</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button
+            type="button"
+            id="theme-toggle"
+            class="theme-toggle"
+            aria-label="Alternar tema"
+            title="Alternar tema"
+          >
+            ◐
+          </button>
+        </div>
+      </nav>
+    </header>
+    <!-- Menu Lateral -->
+    <aside id="sidebar" class="sidebar" aria-hidden="true">
+      <div class="sidebar-header">
+        <h2>Menu</h2>
+
+        <button type="button" id="menu-close" aria-label="Fechar menu lateral">
+          ×
+        </button>
+      </div>
+
+      <nav aria-label="Navegação principal">
+        <ul>
+          <li><a href="analise.html">Análise de veículos</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <!-- Hero -->
+      <section id="inicio" class="hero">
+        <div class="container hero-content">
+          <div class="hero-text">
+            <span class="section-label"> ANÁLISE AUTOMOTIVA </span>
+
+            <h1>
+              Conheça melhor cada carro.
+              <span>Escolha com mais informação.</span>
+            </h1>
+
+            <p>
+              Compare diferentes veículos com base em indicadores técnicos,
+              eficiência, conforto, tecnologia e preço, identificando os pontos
+              fortes de cada opção.
+            </p>
+
+            <a href="analise.html" class="btn btn-primary">
+              Explorar análises
+            </a>
+          </div>
+
+          <div class="hero-img">
+            <img src="" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Apresentação do projeto -->
+      <section id="sobre" class="section about">
+        <div class="container">
+          <span class="section-label"> SOBRE O PROJETO </span>
+
+          <h2>Por que o CAR-ANALYSIS existe?</h2>
+
+          <p>
+            Escolher um veículo envolve muito mais do que observar sua aparência
+            ou comparar preços. Potência, consumo, autonomia, conforto e
+            segurança são alguns dos fatores que podem fazer diferença na
+            decisão.
+          </p>
+
+          <p>
+            O CAR-ANALYSIS foi idealizado para organizar essas informações e
+            transformá-las em análises que facilitem a comparação entre
+            diferentes veículos. A proposta é reunir critérios definidos,
+            apresentar os resultados de forma visual e ajudar o usuário a
+            compreender os pontos fortes e as limitações de cada opção.
+          </p>
+
+          <p>
+            Mais do que indicar um veículo, o sistema busca oferecer informações
+            que permitam ao usuário avaliar as alternativas de acordo com suas
+            próprias prioridades.
+          </p>
+        </div>
+      </section>
+
+      <!-- Funcionamento do sistema -->
+      <section id="como-funciona" class="section how-it-works">
+        <div class="container">
+          <span class="section-label"> FUNCIONAMENTO </span>
+
+          <h2>Dos dados à análise</h2>
+
+          <p>
+            O sistema utiliza dados técnicos e informações sobre os veículos
+            para calcular indicadores relacionados a diferentes dimensões. Esses
+            indicadores são tratados de acordo com critérios específicos,
+            permitindo transformar valores isolados em resultados comparáveis.
+          </p>
+
+          <p>
+            Cada dimensão possui sua própria lógica de avaliação. Alguns
+            indicadores são calculados a partir de dados técnicos, enquanto
+            outros consideram a presença de determinados recursos ou
+            características do veículo.
+          </p>
+
+          <p>
+            Os resultados são reunidos para oferecer uma visão geral, sem deixar
+            de apresentar as dimensões individualmente. Dessa forma, o usuário
+            pode compreender tanto o resultado geral quanto os fatores que
+            contribuíram para ele.
+          </p>
+
+          <p>
+            A metodologia busca manter critérios consistentes e tornar o
+            processo de comparação mais transparente.
+          </p>
+        </div>
+      </section>
+
+      <!-- Dimensões de análise -->
+      <section id="dimensoes" class="section dimensions">
+        <div class="container">
+          <span class="section-label"> DIMENSÕES DE ANÁLISE </span>
+
+          <h2>O que avaliamos em cada veículo?</h2>
+
+          <p class="section-intro">
+            Cada dimensão analisa características específicas para ajudar a
+            compreender e comparar os veículos de diferentes perspectivas.
+          </p>
+
+          <!-- Desempenho -->
+          <article id="desempenho" class="dimension-section">
+            <div class="dimension-heading">
+              <span class="dimension-number">01</span>
+              <h3>Desempenho</h3>
+            </div>
+
+            <p>
+              O desempenho reúne indicadores que ajudam a compreender as
+              capacidades dinâmicas do veículo. Entre eles estão a relação entre
+              potência e peso, o tempo de aceleração de 0 a 100 km/h e a
+              velocidade máxima.
+            </p>
+
+            <p>
+              Esses dados são tratados de acordo com sua natureza: em alguns
+              casos, valores maiores representam resultados melhores; em outros,
+              como no tempo de aceleração, valores menores são mais favoráveis.
+            </p>
+
+            <p>
+              Para permitir a comparação, os indicadores são normalizados com
+              base em referências definidas para a categoria analisada. Assim, é
+              possível observar o desempenho relativo de cada veículo em
+              diferentes critérios.
+            </p>
+          </article>
+
+          <!-- Eficiência -->
+          <article id="eficiencia" class="dimension-section">
+            <div class="dimension-heading">
+              <span class="dimension-number">02</span>
+              <h3>Eficiência</h3>
+            </div>
+
+            <p>
+              A eficiência está relacionada à quantidade de energia necessária
+              para percorrer determinada distância. A análise considera
+              informações de consumo urbano e rodoviário, além de indicadores
+              energéticos que permitam comparações entre diferentes tipos de
+              motorização.
+            </p>
+
+            <p>
+              O objetivo é compreender o aproveitamento energético do veículo,
+              sem confundir eficiência com autonomia. Um veículo pode percorrer
+              uma distância maior por possuir maior capacidade de armazenamento
+              de energia, sem necessariamente apresentar melhor eficiência.
+            </p>
+
+            <p>
+              A avaliação procura utilizar critérios comparáveis e considerar as
+              particularidades de cada sistema de propulsão.
+            </p>
+          </article>
+
+          <!-- Autonomia -->
+          <article id="autonomia" class="dimension-section">
+            <div class="dimension-heading">
+              <span class="dimension-number">03</span>
+              <h3>Autonomia</h3>
+            </div>
+
+            <p>
+              A autonomia representa a distância que um veículo pode percorrer
+              antes de precisar reabastecer ou recarregar sua fonte de energia,
+              conforme o tipo de motorização.
+            </p>
+
+            <p>
+              Essa dimensão permite visualizar o alcance estimado de cada
+              veículo e compreender sua adequação a diferentes necessidades de
+              deslocamento.
+            </p>
+
+            <p>
+              A autonomia é analisada separadamente da eficiência, pois depende
+              também de fatores como a capacidade do tanque ou da bateria e as
+              condições de utilização.
+            </p>
+          </article>
+
+          <!-- Conforto e capacidade -->
+          <article id="conforto-capacidade" class="dimension-section">
+            <div class="dimension-heading">
+              <span class="dimension-number">04</span>
+              <h3>Conforto e capacidade</h3>
+            </div>
+
+            <p>
+              Essa dimensão reúne características relacionadas ao espaço
+              disponível e à experiência de utilização do veículo. Entre os
+              critérios considerados estão a capacidade do porta-malas, o número
+              de ocupantes, a ergonomia, o conforto dos bancos, a suspensão, o
+              isolamento acústico e a qualidade dos materiais e acabamentos.
+            </p>
+
+            <p>
+              A proposta é apresentar uma visão mais ampla da experiência a
+              bordo, considerando tanto a praticidade quanto o conforto dos
+              ocupantes.
+            </p>
+
+            <p>
+              Sempre que os dados permitirem, os critérios serão organizados de
+              maneira consistente para facilitar a comparação entre veículos.
+            </p>
+          </article>
+
+          <!-- Tecnologia e segurança -->
+          <article id="tecnologia-seguranca" class="dimension-section">
+            <div class="dimension-heading">
+              <span class="dimension-number">05</span>
+              <h3>Tecnologia e segurança</h3>
+            </div>
+
+            <p>
+              A análise considera os equipamentos tecnológicos e os recursos de
+              segurança disponíveis em cada veículo. Isso pode incluir sistemas
+              de assistência ao condutor, sensores, câmeras, conectividade,
+              controle de estabilidade e recursos de frenagem automática.
+            </p>
+
+            <p>
+              A presença de equipamentos pode ser avaliada por meio de critérios
+              definidos, enquanto informações quantitativas e resultados de
+              testes de segurança podem exigir tratamentos específicos.
+            </p>
+
+            <p>
+              O objetivo é identificar os recursos disponíveis e apresentar
+              informações relevantes para a comparação, respeitando as
+              diferenças entre versões, mercados e fontes de dados.
+            </p>
+          </article>
+
+          <!-- Custo-benefício -->
+          <article id="custo-beneficio" class="dimension-section">
+            <div class="dimension-heading">
+              <span class="dimension-number">06</span>
+              <h3>Custo-benefício</h3>
+            </div>
+
+            <p>
+              O custo-benefício procura relacionar o preço do veículo aos
+              resultados obtidos nas dimensões técnicas analisadas.
+            </p>
+
+            <p>
+              Em vez de considerar apenas o menor preço ou o maior desempenho,
+              essa avaliação busca oferecer uma visão conjunta do que cada opção
+              apresenta em relação ao seu valor.
+            </p>
+
+            <p>
+              A proposta é permitir que veículos com características e preços
+              diferentes sejam comparados de maneira mais informativa, sem
+              modificar artificialmente seus resultados técnicos para favorecer
+              uma faixa de preço.
+            </p>
+
+            <p>
+              O resultado depende dos critérios e da metodologia adotados, por
+              isso deve ser interpretado em conjunto com as dimensões
+              individuais e as prioridades do usuário.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Metodologia e referências -->
+      <section id="metodologia" class="section methodology">
+        <div class="container">
+          <span class="section-label"> METODOLOGIA </span>
+
+          <h2>Como os resultados são comparados?</h2>
+
+          <p>
+            Para tornar os indicadores comparáveis, o sistema utiliza
+            referências adequadas a cada critério e categoria de veículo. Essas
+            referências permitem avaliar como determinado veículo se posiciona
+            em relação aos valores observados.
+          </p>
+
+          <p>
+            Nos indicadores em que valores maiores são favoráveis, a comparação
+            considera a proximidade ou a superação da referência. Quando valores
+            menores são melhores, como no tempo de aceleração, a lógica é
+            invertida.
+          </p>
+
+          <p>
+            Os resultados podem ultrapassar 100% quando um veículo supera a
+            referência adotada. Isso representa sua posição relativa naquele
+            indicador, e não uma nota máxima universal.
+          </p>
+
+          <p>
+            A metodologia também considera que as referências podem mudar à
+            medida que novos veículos são incorporados à base de dados. Por
+            isso, os resultados devem ser interpretados de acordo com a
+            referência utilizada no momento da análise.
+          </p>
+        </div>
+      </section>
+
+      <!-- Chamada final -->
+      <section id="chamada-final" class="section final-cta">
+        <div class="container">
+          <h2>Compare. Entenda. Escolha com mais informação.</h2>
+
+          <p>
+            Explore diferentes modelos e versões, conheça seus indicadores e
+            compare os aspectos que realmente importam para você.
+          </p>
+
+          <p>
+            O CAR-ANALYSIS reúne informações para tornar a análise automotiva
+            mais clara, organizada e acessível.
+          </p>
+
+          <a href="analise.html" class="btn btn-primary"> Começar análise </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+      <div class="container footer-content">
+        <a href="#inicio" class="logo"> CAR-ANALYSIS </a>
+
+        <p>Projeto de análise e comparação automotiva.</p>
+
+        <a href="#inicio">Voltar ao início ↑</a>
+      </div>
+    </footer>
+  </body>
 </html>
